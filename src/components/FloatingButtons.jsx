@@ -31,6 +31,7 @@ const FloatingButtons = () => {
       id: "contact",
       icon: <User size={20} className="text-purple-400" />,
       label: "Contact",
+      href: "#contact",
       color: "bg-purple-500 hover:bg-purple-600",
       openDialog: () => openDialog(),
     },
