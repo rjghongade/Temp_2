@@ -163,7 +163,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
 <button
               onClick={scrollToTop}
-              className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-colors duration-300 text-gray-300 hover:text-white"
+              className="w-12 h-12 rounded-full flex items-center justify-center rounded-full bg-gradient-to-r from-amber-600 to-green-700 hover:from-green-700 hover:to-amber-700 active:from-green-800 active:to-amber-800 text-white shadow-lg transition-all"
             >
               <ChevronUp size={16} />
             </button>
