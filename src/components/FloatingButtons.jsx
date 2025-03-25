@@ -33,7 +33,7 @@ const FloatingButtons = () => {
       label: "Contact",
       href: "#contact",
       color:
-        "from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 active:from-purple-800 active:to-indigo-800",
+        "bg-red-500 hover:bg-blue-600",
     },
   ];
 
