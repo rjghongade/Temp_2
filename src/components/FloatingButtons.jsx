@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MessageCircle, Phone, User, X } from "lucide-react";
+import seodata from '../../seodata.json'
 
 const FloatingButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,7 +18,7 @@ const FloatingButtons = () => {
       id: "whatsapp",
       icon: <MessageCircle size={20} className="text-green-400" />,
       label: "WhatsApp",
-      href: `https://wa.me/918181817136?text=I%20am%20interested` ,
+      href: `https://wa.me/918181817136?text=I%20am%20interested%20in%20${seodata?.data?.property_name}`,
       color: "bg-green-500 hover:bg-green-600",
     },
     {

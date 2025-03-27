@@ -64,7 +64,7 @@ const AmenitiesSection = () => {
             />
           </div>
           <h3 className="text-xl font-semibold text-[#170505] mb-2">{amenity.amenity_name}</h3>
-          <p className="text-[#312223] text-sm">Updated: {new Date(amenity.updated_at).toLocaleDateString()}</p>
+          {/* <p className="text-[#312223] text-sm">Updated: {new Date(amenity.updated_at).toLocaleDateString()}</p> */}
         </div>
       ))}
     </div>

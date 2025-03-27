@@ -77,12 +77,12 @@ const Location = () => {
   <div className="mb-10 flex flex-col items-center">
     <div className="flex items-center gap-3 mb-3">
       <MapIcon size={28} className="text-[#d1b578]" />
-      <h2 className="text-2xl sm:text-3xl font-bold text-[#d1b578]">
+      <h2 className="text-4xl sm:text-4xl font-bold text-[#d1b578]">
         {locationData.heading || "Prime Location"}
       </h2>
     </div>
     {locationData.subheading && (
-      <p className="text-[#d1b578] text-center max-w-2xl opacity-90">
+      <p className="text-[#d1b578] text-center max-w-4xl opacity-90">
         {locationData.subheading}
       </p>
     )}

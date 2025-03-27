@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiMenu, FiX, FiInfo, FiDollarSign, FiImage, FiBook, FiMapPin, FiPhone, FiGrid } from 'react-icons/fi';
+import { FiMenu, FiX, FiInfo, FiDollarSign, FiImage, FiBook, FiMapPin, FiPhone, FiGrid, FiHome, FiStar } from 'react-icons/fi';
 import config from '../../config'
 
 const Header = () => {
@@ -68,9 +68,9 @@ const Header = () => {
 
           <div className="hidden md:flex space-x-6 text-sm font-medium">
             {[
-              { href: 'AmenitiesSection', label: 'Amenities', icon: <FiInfo className="mr-1" /> },
-              { href: 'BanksSection', label: 'Banks', icon: <span className="mr-1">₹</span> },
-              { href: 'FloorPlans', label: 'Floor Plans', icon: <FiMapPin className="mr-1" /> },
+              { href: 'AmenitiesSection', label: 'Amenities', icon: <FiStar className="mr-1" /> },
+              { href: 'BanksSection', label: 'Price', icon: <span className="mr-1">₹</span> },
+              { href: 'FloorPlans', label: 'About', icon: <FiHome className="mr-1" /> },
               { href: "Gallery", label: "Gallery", icon: <FiImage className="mr-1" /> },
               { href: "Location", label: "Location", icon: <FiMapPin className="mr-1" /> },
               { href: "Blogs", label: "Blogs", icon: <FiBook className="mr-1" /> },
@@ -132,9 +132,9 @@ const Header = () => {
               <img src={data.logo} alt={data.property_name} className="mb-8 w-32" />
               <ul className="space-y-6">
                 {[
-                  { href: 'AmenitiesSection', label: 'Amenities', icon: <FiInfo className="mr-1" /> },
-                  { href: 'BanksSection', label: 'Banks', icon: <span className="mr-1">₹</span> },
-                  { href: 'FloorPlans', label: 'Floor Plans', icon: <FiMapPin className="mr-1" /> },
+                  { href: 'AmenitiesSection', label: 'Amenities', icon: <FiStar className="mr-1" /> },
+                  { href: 'BanksSection', label: 'Price', icon: <span className="mr-1">₹</span> },
+                  { href: 'FloorPlans', label: 'About', icon: <FiHome className="mr-1" /> },
                   { href: "Gallery", label: "Gallery", icon: <FiImage className="mr-1" /> },
                   { href: "Location", label: "Location", icon: <FiMapPin className="mr-1" /> },
                   { href: "Blogs", label: "Blogs", icon: <FiBook className="mr-1" /> },
@@ -150,7 +150,7 @@ const Header = () => {
                 ))}
               </ul>
               <div className="mt-10 pt-6 border-t border-gray-700">
-                <a href="contact" onClick={() => setMenuOpen(false)} className="block text-center bg-amber-500 text-white font-medium py-3 px-6 rounded-lg">Enquire Now</a>
+                <a href="#contact" onClick={() => setMenuOpen(false)} className="block text-center bg-amber-500 text-white font-medium py-3 px-6 rounded-lg">Enquire Now</a>
               </div>
             </div>
           </div>

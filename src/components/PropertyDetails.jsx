@@ -17,7 +17,7 @@ const PropertyDetails = () => {
   }
 
   return (
-<section className="bg-gradient-to-b from-[#312223] to-[#170505] py-12 px-4 sm:px-6 md:px-8">
+<section id="PropertiInfo" className="bg-gradient-to-b from-[#312223] to-[#170505] py-12 px-4 sm:px-6 md:px-8">
   <div className="max-w-6xl mx-auto bg-[#5f7858] text-white shadow-2xl rounded-xl overflow-hidden">
     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 p-6 sm:p-8">
       <div className="w-full md:w-1/2 relative">
@@ -31,7 +31,7 @@ const PropertyDetails = () => {
       <div className="flex-1 text-center md:text-left">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#d1b578]">{property.property_name}</h1>
         <p className="text-[#312223] mt-2 text-lg">{property.sub_location}</p>
-        <p className="text-xl sm:text-2xl font-semibold text-[#d1b578] mt-3">₹{property.property_price} Cr</p>
+        {/* <p className="text-xl sm:text-2xl font-semibold text-[#d1b578] mt-3">₹{property.property_price} Cr</p> */}
 
         <div className="mt-4">
           <span className="inline-block bg-[#312223] text-[#d1b578] px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
@@ -53,7 +53,7 @@ const PropertyDetails = () => {
                 : tab === "description"
                 ? "Description"
                 : tab === "specifications"
-                ? "Specifications"
+                ? "About Builder"
                 : ""}
             </button>
           ))}
