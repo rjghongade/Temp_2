@@ -68,7 +68,7 @@ const Gallery = () => {
       {heading}
     </h2>
     <div className="w-24 h-1 bg-[#d1b578] mx-auto rounded-full"></div>
-    <p className="text-[#5f7858] mt-4">Explore the stunning views of Ceratec Tower 1o8</p>
+    {/* <p className="text-[#5f7858] mt-4">Explore the stunning views of Ceratec Tower 1o8</p> */}
   </div>
 
   {loading ? (
