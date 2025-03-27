@@ -18,6 +18,7 @@ import Gallery from '../components/Gallary'
 import FloatingButtons from '../components/FloatingButtons'
 import LocationAdvantages from '../components/LocationAdvantages'
 
+
 const HomePage = () => {
   return (
     <>

@@ -36,7 +36,7 @@ const Header = () => {
   if (!data) return <div className="flex justify-center items-center h-16 bg-gray-900"><div className="loader"></div></div>;
 
   return (
-    <header className="relative w-full bg-gradient-to-r  to-amber-600 hover:from-amber-700 hover:to-indigo-700 active:from-purple-800 active:to-indigo-800  text-sm font-medium text-white font-sans">
+    <header className="relative w-full bg-gradient-to-r from-[#5f7858] to-[#170505] text-sm font-medium text-white font-sans">
       {/* Hero Banner */}
       <div className="relative w-full h-screen flex items-center justify-center ">
         <div className="absolute inset-0">
@@ -45,7 +45,7 @@ const Header = () => {
             alt={data.property_name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/30 to-gray-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#312223]/30 to-[#170505]"></div>
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto">

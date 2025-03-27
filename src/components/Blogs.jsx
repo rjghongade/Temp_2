@@ -31,54 +31,55 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div id="Blogs" className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:rotate-1 hover:shadow-xl transition-all duration-300 h-full flex flex-col p-6">
-      {/* Blog Image */}
-      <div className="flex justify-center">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-amber-500 shadow-md">
-          <img
-            src={blog.post_photo}
-            alt={blog.post_title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="text-center mt-6 flex-grow flex flex-col">
-        {/* Meta Info */}
-        <div className="flex justify-center items-center text-green-400 text-sm">
-          <Calendar size={14} className="mr-1" />
-          <span>{formatDate(blog.created_at)}</span>
-          <span className="mx-2">•</span>
-          <Clock size={14} className="mr-1" />
-          <span>{calculateReadingTime(blog.post_content)} min read</span>
-        </div>
-
-        {/* Title */}
-        <h3 className="text-xl font-semibold text-amber-300 mt-3 line-clamp-2">
-          {blog.post_title}
-        </h3>
-
-        {/* Summary */}
-        <p className="text-green-100 mt-2 text-sm line-clamp-3 flex-grow">
-          {blog.post_content_short}
-        </p>
-
-        {/* Read More */}
-        <div className="mt-4">
-          <a
-            href={`/blogs/${blog.post_slug}`}
-            className="inline-flex items-center text-amber-400 hover:text-amber-900 group"
-          >
-            <span className="mr-1">Read More</span>
-            <ArrowRight
-              size={16}
-              className="transform group-hover:translate-x-1 transition-transform duration-200"
-            />
-          </a>
-        </div>
-      </div>
+<div id="Blogs" className="relative bg-gradient-to-br from-[#170505] via-[#312223] to-black backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-[#5f7858]/30 hover:rotate-1 hover:shadow-xl transition-all duration-300 h-full flex flex-col p-6">
+  {/* Blog Image */}
+  <div className="flex justify-center">
+    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#d1b578] shadow-md">
+      <img
+        src={blog.post_photo}
+        alt={blog.post_title}
+        className="w-full h-full object-cover"
+      />
     </div>
+  </div>
+
+  {/* Content */}
+  <div className="text-center mt-6 flex-grow flex flex-col">
+    {/* Meta Info */}
+    <div className="flex justify-center items-center text-[#5f7858] text-sm">
+      <Calendar size={14} className="mr-1" />
+      <span>{formatDate(blog.created_at)}</span>
+      <span className="mx-2">•</span>
+      <Clock size={14} className="mr-1" />
+      <span>{calculateReadingTime(blog.post_content)} min read</span>
+    </div>
+
+    {/* Title */}
+    <h3 className="text-xl font-semibold text-[#d1b578] mt-3 line-clamp-2">
+      {blog.post_title}
+    </h3>
+
+    {/* Summary */}
+    <p className="text-[#5f7858] mt-2 text-sm line-clamp-3 flex-grow">
+      {blog.post_content_short}
+    </p>
+
+    {/* Read More */}
+    <div className="mt-4">
+      <a
+        href={`/blogs/${blog.post_slug}`}
+        className="inline-flex items-center text-[#d1b578] hover:text-[#5f7858] group transition-colors duration-300"
+      >
+        <span className="mr-1">Read More</span>
+        <ArrowRight
+          size={16}
+          className="transform group-hover:translate-x-1 transition-transform duration-200"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+
   );
 };
 
@@ -157,67 +158,68 @@ const Blogs = () => {
   }
 
   return (
-    <div id="blogs-section" className="bg-gray-800 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-amber-400 mb-3">Latest Insights</h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto rounded-full mb-6"></div>
-        </div>
+<div id="blogs-section" className="bg-[#170505] py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-[#d1b578] mb-3">Latest Insights</h2>
+      <div className="w-24 h-1 bg-[#5f7858] mx-auto rounded-full mb-6"></div>
+    </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {currentBlogs.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
+    {/* Blog Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {currentBlogs.map((blog) => (
+        <BlogCard key={blog.id} blog={blog} />
+      ))}
+    </div>
+
+    {/* Pagination */}
+    {totalPages > 1 && (
+      <div className="mt-12 flex justify-center items-center">
+        <button
+          onClick={() => paginate(currentPage - 1)}
+          disabled={currentPage === 1}
+          className={`p-2 rounded-full ${
+            currentPage === 1
+              ? "text-gray-500 cursor-not-allowed"
+              : "text-[#d1b578] hover:bg-[#312223]"
+          }`}
+        >
+          <ChevronLeft size={20} />
+        </button>
+
+        <div className="px-4 flex space-x-2">
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+                currentPage === index + 1
+                  ? "bg-[#5f7858] text-white"
+                  : "text-[#d1b578] hover:bg-[#312223]"
+              }`}
+            >
+              {index + 1}
+            </button>
           ))}
         </div>
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="mt-12 flex justify-center items-center">
-            <button
-              onClick={() => paginate(currentPage - 1)}
-              disabled={currentPage === 1}
-              className={`p-2 rounded-full ${
-                currentPage === 1
-                  ? "text-gray-500 cursor-not-allowed"
-                  : "text-gray-300 hover:bg-gray-800"
-              }`}
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <div className="px-4 flex space-x-2">
-              {[...Array(totalPages)].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => paginate(index + 1)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                    currentPage === index + 1
-                      ? "bg-purple-600 text-white"
-                      : "text-gray-300 hover:bg-gray-800"
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
-
-            <button
-              onClick={() => paginate(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className={`p-2 rounded-full ${
-                currentPage === totalPages
-                  ? "text-gray-500 cursor-not-allowed"
-                  : "text-gray-300 hover:bg-gray-800"
-              }`}
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        )}
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className={`p-2 rounded-full ${
+            currentPage === totalPages
+              ? "text-gray-500 cursor-not-allowed"
+              : "text-[#d1b578] hover:bg-[#312223]"
+          }`}
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
-    </div>
+    )}
+  </div>
+</div>
+
   );
 };
 

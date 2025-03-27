@@ -62,90 +62,91 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8" id="Gallery">
-      <div className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-amber-400 mb-2">
-          {heading}
-        </h2>
-        <div className="w-24 h-1 bg-amber-600 mx-auto rounded-full"></div>
-        <p className="text-green-400 mt-4">Explore the stunning views of Ceratec Tower 1o8</p>
-      </div>
+<div className="bg-gradient-to-br from-[#170505] via-[#312223] to-black p-8" id="Gallery">
+  <div className="mb-10 text-center">
+    <h2 className="text-3xl font-bold text-[#d1b578] mb-2">
+      {heading}
+    </h2>
+    <div className="w-24 h-1 bg-[#d1b578] mx-auto rounded-full"></div>
+    <p className="text-[#5f7858] mt-4">Explore the stunning views of Ceratec Tower 1o8</p>
+  </div>
 
-      {loading ? (
-        <p className="text-center text-amber-400">Loading gallery...</p>
-      ) : error ? (
-        <p className="text-center text-red-400">Error: {error}</p>
-      ) : (
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-          effect="coverflow"
-          centeredSlides={true}
-          slidesPerView={1}
-          spaceBetween={10}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          loop={true}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="pb-10"
-        >
-          {images.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg"
-                onClick={() => openLightbox(image, index)}
-              >
-                <img
-                  src={image.photo}
-                  alt="Gallery"
-                  className="w-full h-64 object-cover transition-all duration-300 transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Camera size={24} className="text-white" />
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex flex-col justify-center items-center p-4">
-          <button
-            className="absolute top-4 right-4 text-white hover:text-purple-400 p-2 rounded-full bg-gray-800/60"
-            onClick={closeLightbox}
+  {loading ? (
+    <p className="text-center text-[#d1b578]">Loading gallery...</p>
+  ) : error ? (
+    <p className="text-center text-red-400">Error: {error}</p>
+  ) : (
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+      effect="coverflow"
+      centeredSlides={true}
+      slidesPerView={1}
+      spaceBetween={10}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      loop={true}
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }}
+      className="pb-10"
+    >
+      {images.map((image, index) => (
+        <SwiperSlide key={index}>
+          <div
+            className="group relative cursor-pointer overflow-hidden rounded-lg shadow-lg"
+            onClick={() => openLightbox(image, index)}
           >
-            <X size={24} />
-          </button>
-
-          <div className="relative w-full max-w-4xl max-h-[80vh] flex justify-center items-center">
-            <button
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/60 p-2 rounded-full text-white hover:bg-purple-600 transition-colors duration-300 z-10"
-              onClick={goToPrevImage}
-            >
-              <ChevronLeft size={24} />
-            </button>
-
             <img
-              src={selectedImage.photo}
-              alt="Enlarged view"
-              className="max-h-[80vh] max-w-full object-contain rounded-lg transition-all duration-300 ease-in-out"
+              src={image.photo}
+              alt="Gallery"
+              className="w-full h-64 object-cover transition-all duration-300 transform group-hover:scale-105"
             />
-
-            <button
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/60 p-2 rounded-full text-white hover:bg-purple-600 transition-colors duration-300 z-10"
-              onClick={goToNextImage}
-            >
-              <ChevronRight size={24} />
-            </button>
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Camera size={24} className="text-[#d1b578]" />
+            </div>
           </div>
-        </div>
-      )}
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  )}
+
+  {/* Lightbox */}
+  {selectedImage && (
+    <div className="fixed inset-0 bg-black/80 z-50 flex flex-col justify-center items-center p-4">
+      <button
+        className="absolute top-4 right-4 text-white hover:text-[#5f7858] p-2 rounded-full bg-[#312223]/60 transition-colors duration-300"
+        onClick={closeLightbox}
+      >
+        <X size={24} />
+      </button>
+
+      <div className="relative w-full max-w-4xl max-h-[80vh] flex justify-center items-center">
+        <button
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#312223]/60 p-2 rounded-full text-white hover:bg-[#5f7858] transition-colors duration-300 z-10"
+          onClick={goToPrevImage}
+        >
+          <ChevronLeft size={24} />
+        </button>
+
+        <img
+          src={selectedImage.photo}
+          alt="Enlarged view"
+          className="max-h-[80vh] max-w-full object-contain rounded-lg transition-all duration-300 ease-in-out"
+        />
+
+        <button
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#312223]/60 p-2 rounded-full text-white hover:bg-[#5f7858] transition-colors duration-300 z-10"
+          onClick={goToNextImage}
+        >
+          <ChevronRight size={24} />
+        </button>
+      </div>
     </div>
+  )}
+</div>
+
   );
 };
 

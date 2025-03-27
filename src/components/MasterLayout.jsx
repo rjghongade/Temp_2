@@ -21,14 +21,14 @@ const MasterLayout = () => {
   const zoomOut = () => setZoom((prevZoom) => Math.max(prevZoom - 0.2, 1));
 
   return (
-    <section id="MasterLayout" className="bg-gradient-to-br from-black via-gray-900 to-gray-800 py-16 px-6 text-white">
+    <section id="MasterLayout" className="bg-gradient-to-br from-[#170505] via-[#312223] to-[#170505] py-16 px-6 text-[#d1b578]">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-amber-400 mb-8">
+        <h2 className="text-4xl font-extrabold text-[#d1b578] mb-8">
           {heading}
         </h2>
 
         {masterLayout ? (
-          <div className="relative bg-gray-800 bg-opacity-80 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden p-8">
+          <div className="relative bg-[#5f7858] bg-opacity-80 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden p-8">
             {/* Image Container with Zoom Controls */}
             <div className="relative group mb-6">
               <div className="flex justify-center items-center">
@@ -44,13 +44,13 @@ const MasterLayout = () => {
               <div className="absolute bottom-4 right-4 flex space-x-2 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                 <button
                   onClick={zoomIn}
-                  className="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-3 py-2 rounded-lg shadow-lg"
+                  className="bg-[#d1b578] hover:bg-[#312223] text-[#170505] font-semibold px-3 py-2 rounded-lg shadow-lg"
                 >
                   🔍+
                 </button>
                 <button
                   onClick={zoomOut}
-                  className="bg-gray-600 hover:bg-gray-500 text-white font-semibold px-3 py-2 rounded-lg shadow-lg"
+                  className="bg-[#312223] hover:bg-[#5f7858] text-[#d1b578] font-semibold px-3 py-2 rounded-lg shadow-lg"
                 >
                   🔍-
                 </button>
@@ -59,31 +59,31 @@ const MasterLayout = () => {
 
             {/* Layout Details */}
             <div className="text-left">
-              <h3 className="text-3xl font-semibold text-amber-400">
+              <h3 className="text-3xl font-semibold text-[#d1b578]">
                 {masterLayout.layout_name}
               </h3>
 
               {masterLayout.unit_layout_heading && (
-                <p className="text-gray-300 mt-4">
-                  <strong className="text-amber-300">Heading:</strong> {masterLayout.unit_layout_heading}
+                <p className="text-[#d1b578] mt-4">
+                  <strong className="text-[#312223]">Heading:</strong> {masterLayout.unit_layout_heading}
                 </p>
               )}
 
               {masterLayout.unit_layout_carpet_area && (
-                <p className="text-gray-300 mt-4">
-                  <strong className="text-amber-300">Carpet Area:</strong> {masterLayout.unit_layout_carpet_area}
+                <p className="text-[#d1b578] mt-4">
+                  <strong className="text-[#312223]">Carpet Area:</strong> {masterLayout.unit_layout_carpet_area}
                 </p>
               )}
 
               {masterLayout.unit_layout_price && (
-                <p className="text-gray-300 mt-4">
-                  <strong className="text-amber-300">Price:</strong> ₹{masterLayout.unit_layout_price}
+                <p className="text-[#d1b578] mt-4">
+                  <strong className="text-[#312223]">Price:</strong> ₹{masterLayout.unit_layout_price}
                 </p>
               )}
 
               {masterLayout.unit_layout_description && (
-                <p className="text-gray-300 mt-4">
-                  <strong className="text-amber-300">Description:</strong> {masterLayout.unit_layout_description}
+                <p className="text-[#d1b578] mt-4">
+                  <strong className="text-[#312223]">Description:</strong> {masterLayout.unit_layout_description}
                 </p>
               )}
 

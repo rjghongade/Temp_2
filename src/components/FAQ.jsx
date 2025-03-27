@@ -63,42 +63,43 @@ const FAQ = () => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black p-8">
-      {/* Header */}
-      <div className="mb-10">
-        <h2 className="text-3xl font-bold text-amber-400 text-center">{heading}</h2>
-        <p className="text-green-400 text-center mt-3 max-w-2xl mx-auto">
-          Find answers to commonly asked questions about Ceratec Tower 1o8 Balewadi
-        </p>
-      </div>
+<div className="bg-gradient-to-br from-[#170505] via-[#312223] to-black p-8">
+  {/* Header */}
+  <div className="mb-10">
+    <h2 className="text-3xl font-bold text-[#d1b578] text-center">{heading}</h2>
+    <p className="text-[#5f7858] text-center mt-3 max-w-2xl mx-auto">
+      Find answers to commonly asked questions about Ceratec Tower 1o8 Balewadi
+    </p>
+  </div>
 
-      {/* FAQ List */}
-      <div className="max-w-4xl mx-auto space-y-4">
-        {faqs.map((faq) => (
-          <div key={faq.id} className="bg-gray-800/60 border border-gray-700 rounded-lg">
-            <button
-              onClick={() => handleQuestionClick(faq.id)}
-              className="w-full flex items-center justify-between p-4 text-left transition-all hover:bg-gray-700 hover:border-purple-500"
-            >
-              <span className="text-green-200 font-medium text-lg">
-                {faq.faq_title}
-              </span>
-              {activeQuestion === faq.id ? (
-                <ChevronDown className="text-green-400" />
-              ) : (
-                <ChevronRight className="text-green-400" />
-              )}
-            </button>
+  {/* FAQ List */}
+  <div className="max-w-4xl mx-auto space-y-4">
+    {faqs.map((faq) => (
+      <div key={faq.id} className="bg-[#312223]/60 border border-[#312223] rounded-lg">
+        <button
+          onClick={() => handleQuestionClick(faq.id)}
+          className="w-full flex items-center justify-between p-4 text-left transition-all hover:bg-[#312223] hover:border-[#d1b578]"
+        >
+          <span className="text-[#5f7858] font-medium text-lg">
+            {faq.faq_title}
+          </span>
+          {activeQuestion === faq.id ? (
+            <ChevronDown className="text-[#5f7858]" />
+          ) : (
+            <ChevronRight className="text-[#5f7858]" />
+          )}
+        </button>
 
-            {activeQuestion === faq.id && (
-              <div className="p-4 border-t border-green-500 text-amber-300">
-                {stripHtml(faq.faq_content)}
-              </div>
-            )}
+        {activeQuestion === faq.id && (
+          <div className="p-4 border-t border-[#5f7858] text-[#d1b578]">
+            {stripHtml(faq.faq_content)}
           </div>
-        ))}
+        )}
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
