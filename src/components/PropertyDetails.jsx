@@ -85,7 +85,7 @@ const PropertyDetails = () => {
 
       {activeTab === "specifications" && (
         <div className="mt-4">
-          <h2 className="text-lg sm:text-xl font-semibold text-[#d1b578]">Property Specifications</h2>
+          <h2 className="text-lg sm:text-xl font-semibold text-[#d1b578]">About Builder</h2>
           <div className="text-[#d1b578] mt-3 max-h-60 overflow-y-auto p-4 bg-[#170505] bg-opacity-50 border border-[#312223] rounded-lg shadow-lg">
             <div dangerouslySetInnerHTML={{ __html: property.property_specification }} />
           </div>
